@@ -2,14 +2,12 @@ package com.horizon.procart.procart;
 
 public class Item {
     String item;
-    int quantity;
+    float quantity;  // Changed to float to handle fractional quantities
     int price;
 
-    public Item() {
+    public Item() {}
 
-    }
-
-    public Item(String item, int quantity, int price) {
+    public Item(String item, float quantity, int price) {
         this.item = item;
         this.quantity = quantity;
         this.price = price;
@@ -23,11 +21,11 @@ public class Item {
         this.item = item;
     }
 
-    public int getQuantity() {
+    public float getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(float quantity) {
         this.quantity = quantity;
     }
 
@@ -37,5 +35,10 @@ public class Item {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    // Method to calculate total price for this item
+    public float getTotalPrice() {
+        return price * quantity;
     }
 }
